@@ -18,6 +18,6 @@ namespace ElevenNoteWebApp.Shared.Models.Note
         public string Content { get; set; }
 
         
-        public int CatergoryId { get; set; }
+        public int CategoryId { get; set; }
     }
 }

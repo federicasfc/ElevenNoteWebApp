@@ -97,7 +97,7 @@ namespace ElevenNoteWebApp.Server.Services.NoteServices
                 Content = model.Content,
                 OwnerId = _userId,
                 CreatedUtc = DateTimeOffset.Now,
-                CatergoryId = model.CatergoryId
+                CategoryId = model.CategoryId
 
             };
 
@@ -119,7 +119,7 @@ namespace ElevenNoteWebApp.Server.Services.NoteServices
 
             noteEntity.Title = model.Title;
             noteEntity.Content = model.Content;
-            noteEntity.CatergoryId = model.CatergoryId;
+            noteEntity.CategoryId = model.CategoryId;
             noteEntity.ModifiedUtc = DateTimeOffset.Now;
 
             return await _context.SaveChangesAsync() == 1;
