@@ -1,6 +1,5 @@
 ﻿@page "/category"
 @using ElevenNoteWebApp.Shared.Models.Category
-@using Microsoft.AspNetCore.Authorization
 @inject HttpClient Http
 @attribute [Authorize]
 
@@ -25,15 +24,15 @@ else
         @foreach (CategoryListItem category in categories)
         {
             <tr>
-                @category.Id
-            </tr>
-            <tr>
+                <td>
+                    @category.Id
+                </td>
+                <td>
                     @category.Name
-                </tr>
-                <tr>
-                    <td>
-                    <a href="/category/delete/@category.Id">Delete Category</a>
-                    </td>
+                </td>
+                <td>
+                    <a href=@($"/category/delete/{category.Id}")>Delete</a>
+                 </td>
                 </tr>
         }
     </tbody>

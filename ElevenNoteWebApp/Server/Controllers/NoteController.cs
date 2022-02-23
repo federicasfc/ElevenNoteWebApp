@@ -55,7 +55,7 @@ namespace ElevenNoteWebApp.Server.Controllers
 
         //GetNoteByCategory
 
-        [HttpGet("{id}")]
+        [HttpGet("category/{id}")] //probably will move this to category controller? haven't decided
 
         public async Task<IActionResult> CategoryIndex(int id)
         {
@@ -80,7 +80,7 @@ namespace ElevenNoteWebApp.Server.Controllers
             if (!SetUserIdInService())
                 return Unauthorized();
 
-            if (!ModelState.IsValid || model is null)
+            if (!ModelState.IsValid || model is null) //both of these checks are necesssary because a null ModelState will return as IsValid
                 return BadRequest(ModelState);
 
 
